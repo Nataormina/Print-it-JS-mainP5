@@ -23,8 +23,8 @@ const slides = [
 let count = 0;
 
 // Slides Images 
-const bannerSlides = document.querySelector(".banner-img");
-const bannerTagLine = document.querySelector("#banner p");
+const img = document.querySelector(".banner-img");
+const TagLine = document.querySelector("#banner p");
 
 // Flèche gauche
 const arrowLeft = document.querySelector(".arrow_left");
@@ -32,7 +32,7 @@ const arrowLeft = document.querySelector(".arrow_left");
 const arrowRight = document.querySelector(".arrow_right");
 
 // Bullets points
-const dotsSlides = document.querySelector(".dots");
+const dots = document.querySelector(".dots");
 
 // Création des events listeners des flèches
  // Ajout de la fonction de défilement : étape 4
@@ -52,7 +52,7 @@ slide afin d'avoir le même nombre de points */
 for (let i = 0; i < slides.length; i++) {
 	let dot = document.createElement('div')
 	dot.classList.add("dot")
-	dotsSlides.appendChild(dot);
+	dots.appendChild(dot);
 }
 
 /* Déclaration de la variable pour faire apparaître le point correspondant à la slide sélectionnée
@@ -64,8 +64,8 @@ dotSelected[count].classList.add("dot_selected");
 /* Création de la fonction pour y intégrer toutes les images ainsi que leur descriptifs : étape 4-5 */
 // Création du carrousel 
 function showSlide() {
-	bannerSlides.src = `./assets/images/slideshow/${slides[count].image}`;
-	bannerTagLine.innerHTML = slides[count].tagLine;
+	img.src = `./assets/images/slideshow/${slides[count].image}`;
+	TagLine.innerHTML = slides[count].tagLine;
 }
 	
 // Création de la navigation avec les flèches
@@ -83,7 +83,7 @@ function previousSlide() {
 	}	
 	// Ajout du point sélectionné à la nouvelle slide
 	dotSelected[count].classList.add("dot_selected");
-	// Appelle à la fonction qui affiche le slider 
+	// Appel de la fonction qui affiche le slider 
 	showSlide()
 }
 
@@ -101,6 +101,6 @@ function nextSlide() {
 	}	
 	// Ajout du point sélectionné à la nouvelle slide 
 	dotSelected[count].classList.add("dot_selected");
-	// Appelle de la fonction qui affiche le slider
+	// Appel de la fonction qui affiche le slider
 	showSlide()
 }
