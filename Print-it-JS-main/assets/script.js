@@ -36,12 +36,12 @@ const dots = document.querySelector(".dots");
 
 // Création des events listeners des flèches
  // Ajout de la fonction de défilement : étape 4
-arrowLeft.addEventListener("click", previousSlide)
+arrowLeft.addEventListener("click", slideLeft)
 /* Ecoute fonctionnement de la flèche au clic : étape 2
 	console.log("la flèche gauche au clic fonctionne");*/
 
 // Ajout de la fonction de défilement : étape 4
-arrowRight.addEventListener("click", nextSlide)
+arrowRight.addEventListener("click", slideRight)
 
 /* Test de fonctionnement de la flèche : étape 2
 	console.log("Le clic de la flèche de droite fonctionne");*/
@@ -63,14 +63,14 @@ dotSelected[count].classList.add("dot_selected");
 
 /* Création de la fonction pour y intégrer toutes les images ainsi que leur descriptifs : étape 4-5 */
 // Création du carrousel 
-function showSlide() {
+function viewSlide() {
 	img.src = `./assets/images/slideshow/${slides[count].image}`;
 	TagLine.innerHTML = slides[count].tagLine;
 }
 	
 // Création de la navigation avec les flèches
 // Fonction flèche de gauche
-function previousSlide() {
+function slideLeft() {
 	// Suppression du point actuel sélectionné
 	dotSelected[count].classList.remove("dot_selected");
 	// Si compteur <= 0, alors on revient au dernier slide
@@ -84,11 +84,11 @@ function previousSlide() {
 	// Ajout du point sélectionné à la nouvelle slide
 	dotSelected[count].classList.add("dot_selected");
 	// Appel de la fonction qui affiche le slider 
-	showSlide()
+	viewSlide()
 }
 
 //Fonction flèche de droite
-function nextSlide() {
+function slideRight() {
 	// Suppression du point sélectionné actuel
 	dotSelected[count].classList.remove("dot_selected");
 	// Si compteur >= à la longueur du tableau, alors on retourne à la première slide
@@ -102,5 +102,5 @@ function nextSlide() {
 	// Ajout du point sélectionné à la nouvelle slide 
 	dotSelected[count].classList.add("dot_selected");
 	// Appel de la fonction qui affiche le slider
-	showSlide()
+	viewSlide()
 }
