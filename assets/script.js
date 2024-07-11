@@ -39,6 +39,7 @@ const dots = document.querySelector(".dots");
 arrowLeft.addEventListener("click", slideLeft)
 /* Ecoute fonctionnement de la flèche au clic : étape 2
 	console.log("la flèche gauche au clic fonctionne");*/
+	
 
 // Ajout de la fonction de défilement : étape 4
 arrowRight.addEventListener("click", slideRight)
