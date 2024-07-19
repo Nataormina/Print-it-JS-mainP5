@@ -35,13 +35,13 @@ const arrowRight = document.querySelector(".arrow_right");
 const dots = document.querySelector(".dots");
 
 // Création des events listeners des flèches
- // Ajout de la fonction de défilement : étape 4
+ // Ajout de la fonction de défilement : étape 2
 arrowLeft.addEventListener("click", slideLeft)
 /* Ecoute fonctionnement de la flèche au clic : étape 2
 	console.log("la flèche gauche au clic fonctionne");*/
 	
 
-// Ajout de la fonction de défilement : étape 4
+// Ajout de la fonction de défilement : étape 2
 arrowRight.addEventListener("click", slideRight)
 
 /* Test de fonctionnement de la flèche : étape 2
@@ -74,7 +74,7 @@ function viewSlide() {
 function slideLeft() {
 	// Suppression du point actuel sélectionné
 	dotSelected[count].classList.remove("dot_selected");
-	// Si compteur <= 0, alors on revient au dernier slide
+	// Si compteur <= 0, alors on revient à la dernière slide
 	if (count <= 0) {
 		count = slides.length - 1;
 	} 
